@@ -1,18 +1,17 @@
 zopyx.smartprintng.server
 =========================
 
-A Pyramid based server implementation for the SmartPrintNG framework.
-
-The SmartPrintNG server is part of the SmartPrintNG web-to-print solution
-of ZOPYX.
+``zopyx.smartprintng.server`` is a Pyramid based server implementation 
+and implements the server side functionality of the Produce & Publish platform.
+It is know as the ``Produce & Publish Server``.
 
 Requirements
-============
+------------
 
-* Python 2.6 (no Python 3 support)
+* Python 2.6, 2.7 (no Python 3 support)
 
 Installation
-============
+------------
 
 - create an ``virtualenv`` environment (Python 2.6) - either within your
   current (empty) directory or by letting virtualenv create one for you. 
@@ -53,7 +52,7 @@ Installation
     bin/paster serve server.ini  --daemon
 
 Upgrading
-=========
+---------
 
 For upgrading an existing SmartPrintNG server you should try the following inside
 your virtualenv environment::
@@ -63,7 +62,7 @@ your virtualenv environment::
    
 
 XMLRPC API
-==========
+----------
 
 The SmartPrintNG server exposes several methods through XMLRPC::
 
@@ -99,7 +98,7 @@ The SmartPrintNG server exposes several methods through XMLRPC::
         """ says 'pong' - or something similar """
 
 Email configuration
-===================
+-------------------
 
 For using the email support through the ``convertZIPEmail()`` the email server must be
 configured through a dedicated configuration file. An ``email.ini`` may look like this::
@@ -116,22 +115,29 @@ then server::
 
     bin/paster serve server.ini mail_config=/path/to/email.ini
 
+Source code
+-----------
 
+https://github.com/zopyx/zopyx.smartprintng.server/
+
+Bug tracker
+-----------
+
+https://github.com/zopyx/zopyx.smartprintng.server/issues
 
 Support
-=======
+-------
 
-Support for SmartPrintNG server is currently only available on a project basis.
+Support for Produce & Publish Server is currently only available on a project basis.
 
 
 Contact
-=======
+-------
 
 | ZOPYX Limited
-| c/o Andreas Jung, 
 | Charlottenstr. 37/1
 | D-72070 Tuebingen, Germany
-| E-mail: info at zopyx dot com
-| Web: http://www.zopyx.com
+| info@zopyx.com
+| www.zopyx.com
 
 
