@@ -15,8 +15,8 @@ version = '1.1.0'
 setup(name='zopyx.smartprintng.server',
       version=version,
       description="ZOPYX SmartPrintNG Server",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.rst")).read(),
+      long_description=open(os.path.join('docs', 'source', 'README.rst')).read() + "\n" +
+                       open(os.path.join('docs', 'source', 'HISTORY.rst')).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
