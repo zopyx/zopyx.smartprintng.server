@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.1.1 (2012/02/03)
+------------------
+* better self-test page (more text, some images)
+* updated dependencies
+
 1.1.0 (2011/08/22)
 ------------------
 * compatibility with Pyramid 1.1

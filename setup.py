@@ -10,7 +10,7 @@ from setuptools import setup, find_packages
 if sys.version_info < (2,6):
     raise RuntimeError('Please use Python 2.6.X')
 
-version = '1.1.0'
+version = '1.1.1'
 
 setup(name='zopyx.smartprintng.server',
       version=version,
@@ -33,6 +33,7 @@ setup(name='zopyx.smartprintng.server',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'pastescript',
           'pyramid',
           'pyramid_zcml',
           'pyramid_xmlrpc==0.1',
