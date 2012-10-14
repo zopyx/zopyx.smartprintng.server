@@ -45,11 +45,11 @@ Installation
 
 - start the server (in foreground)::
 
-    bin/paster serve server.ini 
+    bin/pserve server.ini 
 
 - or start it in background::
 
-    bin/paster serve server.ini  --daemon
+    bin/pserve server.ini  --daemon
 
 Upgrading
 ---------
@@ -110,10 +110,10 @@ configured through a dedicated configuration file. An ``email.ini`` may look lik
     force_tls = False
     no_tls = False
 
-You have to pass the name of the email configuration file to ``paster`` when starting
+You have to pass the name of the email configuration file to ``pserve`` when starting
 then server::
 
-    bin/paster serve server.ini mail_config=/path/to/email.ini
+    bin/pserve server.ini mail_config=/path/to/email.ini
 
 Source code
 -----------
@@ -135,8 +135,8 @@ Contact
 -------
 
 | ZOPYX Limited
-| Charlottenstr. 37/1
-| D-72070 Tuebingen, Germany
+| Hundskapfklinge 33
+| D-72074 Tuebingen, Germany
 | info@zopyx.com
 | www.zopyx.com
 

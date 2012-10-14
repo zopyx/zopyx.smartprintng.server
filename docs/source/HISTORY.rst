@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.2 (2012/10/14)
+------------------
+* documentation updated
+
 1.1.1 (2012/02/03)
 ------------------
 * better self-test page (more text, some images)

@@ -8,9 +8,9 @@ import os
 from setuptools import setup, find_packages
 
 if sys.version_info < (2,6):
-    raise RuntimeError('Please use Python 2.6.X')
+    raise RuntimeError('Please use Python 2.6.X or 2.7.X')
 
-version = '1.1.1'
+version = '1.1.2'
 
 setup(name='zopyx.smartprintng.server',
       version=version,
