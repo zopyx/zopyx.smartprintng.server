@@ -27,7 +27,10 @@ def getMailConfiguration():
         raise RuntimeError('No email configuration found')
 
     if not os.path.exists(mail_config):
-        raise RuntimeError('Configured email configuration file not available (%s)' % mail_config)
+        raise RuntimeError(
+            f'Configured email configuration file not available ({mail_config})'
+        )
+
 
     CP = ConfigParser()
     CP.read('email.ini')

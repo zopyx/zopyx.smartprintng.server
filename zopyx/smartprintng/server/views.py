@@ -68,8 +68,14 @@ class selftest(object):
             output_filename = result['output_filename']
             ct, dummy = mimetypes.guess_type(output_filename)
             basename, ext = os.path.splitext(output_filename)
-            headers = [('content-disposition','attachment; filename=selftest-%s%s' % (converter,ext)),
-                       ('content-type', ct)]
+            headers = [
+                (
+                    'content-disposition',
+                    f'attachment; filename=selftest-{converter}{ext}',
+                ),
+                ('content-type', ct),
+            ]
+
             return Response(body=file(output_filename, 'rb').read(),
                             content_type=ct,
                             headerlist=headers
@@ -99,8 +105,11 @@ def deliver(context, request):
     filename = os.path.basename(filename)
     if prefix:
         filename = prefix + os.path.splitext(filename)[1]
-    headers = [('content-disposition','attachment; filename=%s' % filename),
-               ('content-type', ct)]
+    headers = [
+        ('content-disposition', f'attachment; filename={filename}'),
+        ('content-type', ct),
+    ]
+
     return Response(body=file(dest_filename, 'rb').read(),
                     content_type=ct,
                     headerlist=headers
