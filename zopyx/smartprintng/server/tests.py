@@ -103,8 +103,7 @@ class ViewIntegrationTests(unittest.TestCase):
     def test_xmlrpc_ping(self):
         from zopyx.smartprintng.server.views import ping
         context = Server()
-        headers = dict()
-        headers['content-type'] = 'text/xml'
+        headers = {'content-type': 'text/xml'}
         request = testing.DummyRequest(headers=headers, post=True)
         request.body = xml
         result = ping(context, request)
@@ -116,8 +115,7 @@ class ViewIntegrationTests(unittest.TestCase):
     def test_xmlrpc_convertZIP(self):
         from zopyx.smartprintng.server.views import convertZIP
         context = Server()
-        headers = dict()
-        headers['content-type'] = 'text/xml'
+        headers = {'content-type': 'text/xml'}
         request = testing.DummyRequest(headers=headers, post=True)
         zip_archive = os.path.join(os.path.dirname(__file__), 'test_data', 'test.zip')
         zip_data = file(zip_archive, 'rb').read()
@@ -136,8 +134,7 @@ class ViewIntegrationTests(unittest.TestCase):
     def test_xmlrpc_convertZIPandRedirect(self):
         from zopyx.smartprintng.server.views import convertZIPandRedirect
         context = Server()
-        headers = dict()
-        headers['content-type'] = 'text/xml'
+        headers = {'content-type': 'text/xml'}
         request = testing.DummyRequest(headers=headers, post=True)
         zip_archive = os.path.join(os.path.dirname(__file__), 'test_data', 'test.zip')
         zip_data = file(zip_archive, 'rb').read()

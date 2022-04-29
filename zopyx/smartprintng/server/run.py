@@ -24,12 +24,15 @@ def app(global_config, **kw):
         mail_config = os.path.abspath(global_config['mail_config'])
         os.environ['EMAIL_CONFIG'] = mail_config
         config = mail_util.setupMailer()
-        LOG.info('Using email configuration at %s' % mail_config)
+        LOG.info(f'Using email configuration at {mail_config}')
         LOG.info(config)
     LOG.info('SmartPrintNG server started')
-    LOG.info('Temp directory: %s' % root.temp_directory)
-    LOG.info('Spool directory: %s' % root.spool_directory)
-    LOG.info('Available converters: %s' % ', '.join(zopyx.convert2.registry.availableConverters()))
+    LOG.info(f'Temp directory: {root.temp_directory}')
+    LOG.info(f'Spool directory: {root.spool_directory}')
+    LOG.info(
+        f"Available converters: {', '.join(zopyx.convert2.registry.availableConverters())}"
+    )
+
     if have_authentication:
         LOG.info('Authentication module found - server requires authentication')
     else:

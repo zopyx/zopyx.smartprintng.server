@@ -75,9 +75,8 @@ class Server(object):
         for name in os.listdir(self.spool_directory):
             fullname = os.path.join(self.spool_directory, name)
             age = time.time() - os.stat(fullname)[ST_CTIME]
-            if age > self.keep_files_for:
-                if os.path.exists(fullname):
-                    shutil.rmtree(fullname)
+            if age > self.keep_files_for and os.path.exists(fullname):
+                shutil.rmtree(fullname)
 
     def _inject_base_tag(self, html_filename):
         """ All input HTML files contain relative urls (relative
@@ -107,7 +106,7 @@ class Server(object):
 
         # temp directory handling 
         now = datetime.now().strftime('%Y%m%d%Z%H%M%S')
-        ident = '%s-%s' % (now, uuid.uuid4())
+        ident = f'{now}-{uuid.uuid4()}'
         tempdir = os.path.join(self.temp_directory, ident)
         os.makedirs(tempdir)
 
@@ -137,9 +136,9 @@ class Server(object):
         basename, ext = os.path.splitext(os.path.basename(output_filename))
 
         # Generate result ZIP archive with base64-encoded result
-        zip_out = os.path.join(tempdir, '%s.zip' % ident)
+        zip_out = os.path.join(tempdir, f'{ident}.zip')
         ZF = zipfile.ZipFile(zip_out, 'w')
-        ZF.writestr('output%s' % ext, file(output_filename, 'rb').read())
+        ZF.writestr(f'output{ext}', file(output_filename, 'rb').read())
         ZF.writestr('conversion-output.txt', result['output'])
         ZF.close()
 
